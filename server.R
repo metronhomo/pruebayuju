@@ -46,7 +46,7 @@ shinyServer(function(input, output, session) {
       # Color and palette are treated specially in the "superzip" case, because
       # the values are categorical instead of continuous.
       colorData <- datos$marca
-      pal <- colorFactor(c('orange','darkred','green','black'), colorData)
+      pal <- colorFactor(c('blue','darkred','green','black','orange'), colorData)
     leafletProxy("map", data = datos) %>%
       clearShapes() %>%
       addCircleMarkers(~longitude, ~latitude, clusterOptions=markerClusterOptions(disableClusteringAtZoom=10),radius=8, layerId=~ID,
